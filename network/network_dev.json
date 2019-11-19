@@ -1,0 +1,80 @@
+{
+    "name": "chainrefund-network",
+    "version": "1.0.0",
+    "client": {
+        "organization": "ChainrefundOrg",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "ChainrefundOrg": {
+            "mspid": "ChainrefundOrgMSP",
+            "peers": [
+                "peer0.chainrefundOrg.chainrefund.com"
+            ],
+            "certificateAuthorities": [
+                "ca"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.chainrefundOrg.chainrefund.com": {
+            "url": "grpcs://172.31.33.161:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICkjCCAjigAwIBAgIRALmIVS12PstThSDZDONnj+8wCgYIKoZIzj0EAwIwgZIx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMScwJQYDVQQKEx5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5j\nb20xLTArBgNVBAMTJHRsc2NhLmNoYWlucmVmdW5kT3JnLmNoYWlucmVmdW5kLmNv\nbTAeFw0xOTEwMjUwNjM1MDBaFw0yOTEwMjIwNjM1MDBaMIGSMQswCQYDVQQGEwJV\nUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEn\nMCUGA1UEChMeY2hhaW5yZWZ1bmRPcmcuY2hhaW5yZWZ1bmQuY29tMS0wKwYDVQQD\nEyR0bHNjYS5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5jb20wWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAASVTC4stb6pxcpDtDzmiixUvdML007N4iMrCXyAmxkt\n3w53ANc/4+f5gw/z/NfhMpth4l/S+AQAjIYz45u7gO1+o20wazAOBgNVHQ8BAf8E\nBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQF\nMAMBAf8wKQYDVR0OBCIEIDwT2XYcWqCXBehPAZe+1H9ji6qxLC/axWMD7/A8dHJ4\nMAoGCCqGSM49BAMCA0gAMEUCIQDXeKIN1dQfwUcDCmQpiMtnVXvMEQQj/1VWy8TS\njQk8fQIgLAuIgSugxRFZDjG8RqXHXe33qTb9G6COGy0X6Zd/ajM=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.chainrefundOrg.chainrefund.com",
+                "hostnameOverride": "peer0.chainrefundOrg.chainrefund.com"
+            }
+        },
+        "peer0.customsOrg.chainrefund.com": {
+            "url": "grpcs://13.115.79.91:9051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICgDCCAiegAwIBAgIQZRKUEhmAnBPlrvyJ0kZkbjAKBggqhkjOPQQDAjCBijEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xIzAhBgNVBAoTGmN1c3RvbXNPcmcuY2hhaW5yZWZ1bmQuY29tMSkw\nJwYDVQQDEyB0bHNjYS5jdXN0b21zT3JnLmNoYWlucmVmdW5kLmNvbTAeFw0xOTEw\nMjUwNjM1MDBaFw0yOTEwMjIwNjM1MDBaMIGKMQswCQYDVQQGEwJVUzETMBEGA1UE\nCBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEjMCEGA1UEChMa\nY3VzdG9tc09yZy5jaGFpbnJlZnVuZC5jb20xKTAnBgNVBAMTIHRsc2NhLmN1c3Rv\nbXNPcmcuY2hhaW5yZWZ1bmQuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE\n1Qb5k+yvgvp9XTF2hE6igXhX7rjSKWvwmPRR/9vVWaIdkqyJ3FBVzTZPMal9zCiu\n3fuYlIyzixbcDwskZwazFKNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQG\nCCsGAQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCB3\n0WsPZZOnNyXytexS26m6YihX9M32MfWHE5dkN/ZbGjAKBggqhkjOPQQDAgNHADBE\nAiBeXHPHAH1EBP4SFg8opwyuLpodmIqkYMDnlnPygb+2OgIgHIPSmnFaoOHedL4Q\ntmDSysLsrJRhr7Ob6jR71MsjGdU=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.customsOrg.chainrefund.com",
+                "hostnameOverride": "peer0.customsOrg.chainrefund.com"
+            }
+        },
+        "peer0.merchantsOrg.chainrefund.com": {
+            "url": "grpcs://52.68.118.158:10051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICiDCCAi+gAwIBAgIQcFKO8ILhuzG8JlapwaLV2TAKBggqhkjOPQQDAjCBjjEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xJTAjBgNVBAoTHG1lcmNoYW50c09yZy5jaGFpbnJlZnVuZC5jb20x\nKzApBgNVBAMTInRsc2NhLm1lcmNoYW50c09yZy5jaGFpbnJlZnVuZC5jb20wHhcN\nMTkxMDI1MDYzNTAwWhcNMjkxMDIyMDYzNTAwWjCBjjELMAkGA1UEBhMCVVMxEzAR\nBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xJTAjBgNV\nBAoTHG1lcmNoYW50c09yZy5jaGFpbnJlZnVuZC5jb20xKzApBgNVBAMTInRsc2Nh\nLm1lcmNoYW50c09yZy5jaGFpbnJlZnVuZC5jb20wWTATBgcqhkjOPQIBBggqhkjO\nPQMBBwNCAAQw7pO8ixOhhWq5GQh0LHB1m7YqB14QRNYXGpM4r1kEPENzl69wZhBd\ns5AN+ee/DFqx2jMjjNxyenO+8dvO+CLao20wazAOBgNVHQ8BAf8EBAMCAaYwHQYD\nVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYD\nVR0OBCIEIAIUbj+8NaNvwgmQSJ/x62YAfjTUS2vwgu4tLvoFyKRcMAoGCCqGSM49\nBAMCA0cAMEQCIHxKWYqd2ty8G8tDLXPWzsLJBawvnfqR+z6E9HjAZJ/2AiALIlKY\n373mlt6IP+e51HhBQdAk5Qor8ledt79lSm52Pw==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.merchantsOrg.chainrefund.com",
+                "hostnameOverride": "peer0.merchantsOrg.chainrefund.com"
+            }
+        },
+        "peer0.nttOrg.chainrefund.com": {
+            "url": "grpcs://54.178.113.227:11051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICcjCCAhigAwIBAgIRAPwTEnnFF/BUuE1PK4N6avAwCgYIKoZIzj0EAwIwgYIx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMR8wHQYDVQQKExZudHRPcmcuY2hhaW5yZWZ1bmQuY29tMSUwIwYD\nVQQDExx0bHNjYS5udHRPcmcuY2hhaW5yZWZ1bmQuY29tMB4XDTE5MTAyNTA2MzUw\nMFoXDTI5MTAyMjA2MzUwMFowgYIxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxp\nZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMR8wHQYDVQQKExZudHRPcmcu\nY2hhaW5yZWZ1bmQuY29tMSUwIwYDVQQDExx0bHNjYS5udHRPcmcuY2hhaW5yZWZ1\nbmQuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMaOWBJAI8uyPVOMhecBQ\nyto84/oEGU7joxulB7eu7L233RtdsMNjp71psIoQNGiNWT6Jgj6wBB7iEFNrzN3S\nUKNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEF\nBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCDkIocPXqamEzt+0mjqJmNY\nMvLzAWMj2DYAGgBfg0v90jAKBggqhkjOPQQDAgNIADBFAiEApJZm0Hn//u36PdVV\njkOlhvxAiAXlWicUnWgtnXQvCXQCIC8HlKXrMyxqRMA5kFfLhmgAgnyIIY9tor+S\nSMsMFxyk\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.nttOrg.chainrefund.com",
+                "hostnameOverride": "peer0.nttOrg.chainrefund.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca": {
+            "url": "https://13.230.96.240:7054",
+            "caName": "ca",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICjDCCAjKgAwIBAgIRALlmdd/g+5mc+obAXxiku08wCgYIKoZIzj0EAwIwgY8x\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMScwJQYDVQQKEx5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5j\nb20xKjAoBgNVBAMTIWNhLmNoYWlucmVmdW5kT3JnLmNoYWlucmVmdW5kLmNvbTAe\nFw0xOTEwMjUwNjM1MDBaFw0yOTEwMjIwNjM1MDBaMIGPMQswCQYDVQQGEwJVUzET\nMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEnMCUG\nA1UEChMeY2hhaW5yZWZ1bmRPcmcuY2hhaW5yZWZ1bmQuY29tMSowKAYDVQQDEyFj\nYS5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5jb20wWTATBgcqhkjOPQIBBggq\nhkjOPQMBBwNCAAQaDyfNp+3g2hh1si7yxGzYAi1tJCESUSaZ+1NcqTeIUYtiqw+3\n7aLElAg0uOJSK96lpccokn5N7wBby26OpNtvo20wazAOBgNVHQ8BAf8EBAMCAaYw\nHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8w\nKQYDVR0OBCIEIPZ10q+7s3fZRjh83p95INsqDpMLdO89PgwT6ImuRnhNMAoGCCqG\nSM49BAMCA0gAMEUCIQCNG5XeKIwYhixPlDRFk144S8D+y6lmLWJtvT1s8YVu4wIg\nLNjmoSmhL9lS38rP5jJ/UIchnUzssz9QkYeSbzSQwpQ=\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+    
+}

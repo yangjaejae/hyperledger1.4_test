@@ -1,0 +1,30 @@
+#
+# Copyright IBM Corp All Rights Reserved
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+version: '2'
+
+networks:
+  basic:
+
+services:
+
+  node-app:
+    container_name: travelre.api.eos
+    image: travelre.api.eos/nodejs:v1.0.0
+    restart: always
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=net_basic
+
+    working_dir: /usr/src/app
+    command: npm start
+
+    ports:
+      - 5531:3000
+    volumes:
+      - ./:/usr/src/app
+      - ~/.keystore/:/usr/src/app/.keystore
+    networks:
+      - basic
