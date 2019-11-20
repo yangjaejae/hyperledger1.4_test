@@ -10,7 +10,7 @@ networks:
   cr_network:
      external:
         name: cr_network
-        
+
 services:
   node-app:
     container_name: ttaxrefund.api.blockchain
@@ -24,7 +24,6 @@ services:
     command: npm start
     volumes:
       - ./:/usr/src/app
-      - ~/.keystore/:/usr/src/app/.keystore
     deploy:
        mode: replicated
        replicas: 1
