@@ -12,7 +12,7 @@ networks:
         name: cr_network
 
 services:
-  taxrefund.api.blockchain:
+  api_blockchain:
     container_name: taxrefund.api.blockchain
     image: taxrefund.api.blockchain/nodejs:v1.0.0
     restart: always

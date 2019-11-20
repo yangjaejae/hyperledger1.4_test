@@ -1,6 +1,6 @@
 #!/bin/bash
-DOCKER_CONTAINER_NAME="travelre.api.blockchain"
-DOCKER_IMAGE_NAME="travelre.api.blockchain/nodejs"
+DOCKER_CONTAINER_NAME="taxrefund.api.blockchain"
+DOCKER_IMAGE_NAME="taxrefund.api.blockchain/nodejs"
 DOCKER_IMAGE_TAG="v1.0.0"
 COMPOSE_FILE=docker-compose.yaml
 
