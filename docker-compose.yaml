@@ -21,7 +21,7 @@ services:
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=net_basic
 
     working_dir: /usr/src/app
-    command: npm start
+    command: node app.js
     volumes:
       - ./:/usr/src/app
     deploy:
