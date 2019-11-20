@@ -38,7 +38,6 @@ services:
         mode: host
     extra_hosts:
     - "peer0.chainrefundOrg.chainrefund.com:172.31.33.161"
-    - "peer0.chainrefundOrg.chainrefund.com:13.231.214.70"
     - "peer0.customsOrg.chainrefund.com:172.31.47.47"
     - "peer0.merchantsOrg.chainrefund.com:172.31.40.38"
     - "peer0.nttOrg.chainrefund.com:172.31.40.83"
