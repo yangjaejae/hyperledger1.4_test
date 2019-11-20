@@ -12,8 +12,8 @@ networks:
         name: cr_network
 
 services:
-  node-app:
-    container_name: ttaxrefund.api.blockchain
+  taxrefund.api.blockchain:
+    container_name: taxrefund.api.blockchain
     image: taxrefund.api.blockchain/nodejs:v1.0.0
     restart: always
     environment:
