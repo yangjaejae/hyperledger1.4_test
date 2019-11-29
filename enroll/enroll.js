@@ -6,7 +6,7 @@ var os = require('os');
 const FabricCAServices = require('fabric-ca-client');
 const { FileSystemWallet, Gateway, X509WalletMixin } = require('fabric-network');
 
-const ccpPath = path.resolve(__dirname, '..', 'network', 'network_dev.json');
+const ccpPath = path.resolve(__dirname, '..', 'config', 'config_chainrefund_local.json');
 const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
 const ccp = JSON.parse(ccpJSON);
 

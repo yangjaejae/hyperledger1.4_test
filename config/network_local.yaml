@@ -1,0 +1,123 @@
+name: "Network"
+version: "1.0"
+
+channels:
+  mychannel:
+    orderers:
+      - orderer.chainrefund.com
+    peers:
+      peer0.chainrefundOrg.chainrefund.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer0.customsOrg.chainrefund.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer0.merchantsOrg.chainrefund.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer0.nttOrg.chainrefund.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+organizations:
+  ChainrefundOrg:
+    mspid: ChainrefundOrgMSP
+    peers:
+      - peer0.chainrefundOrg.chainrefund.com
+    adminPrivateKey:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/chainrefundOrg.chainrefund.com/users/Admin@chainrefundOrg.chainrefund.com/keystore/9022d671ceedbb24af3ea69b5a8136cc64203df6b9920e26f48123fcfcb1d2e9_sk
+    signedCert:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/chainrefundOrg.chainrefund.com/users/Admin@chainrefundOrg.chainrefund.com/signcerts/Admin@chainrefundOrg.chainrefund.com-cert.pem
+
+  CustomsOrg:
+    mspid: CustomsOrgMSP
+    peers:
+      - peer0.customsOrg.chainrefund.com
+    adminPrivateKey:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/customsOrg.chainrefund.com/users/Admin@customsOrg.chainrefund.com/keystore/5a983ddcbefe52a7f9b8ee5b85a590c3e3a43c4ccd70c7795bec504e7f74848d_sk
+    signedCert:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/customsOrg.chainrefund.com/users/Admin@customsOrg.chainrefund.com/signcerts/Admin@customsOrg.chainrefund.com-cert.pem
+  
+  MerchantsOrg:
+    mspid: MerchantsOrgMSP
+    peers:
+      - peer0.merchantsOrg.chainrefund.com
+    adminPrivateKey:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/merchantsOrg.chainrefund.com/users/Admin@merchantsOrg.chainrefund.com/keystore/5a983ddcbefe52a7f9b8ee5b85a590c3e3a43c4ccd70c7795bec504e7f74848d_sk
+    signedCert:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/merchantsOrg.chainrefund.com/users/Admin@merchantsOrg.chainrefund.com/signcerts/Admin@merchantsOrg.chainrefund.com-cert.pem
+  
+  NTTOrg:
+    mspid: NTTOrgMSP
+    peers:
+      - peer0.nttOrg.chainrefund.com
+    adminPrivateKey:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/nttOrg.chainrefund.com/users/Admin@nttOrg.chainrefund.com/keystore/5a983ddcbefe52a7f9b8ee5b85a590c3e3a43c4ccd70c7795bec504e7f74848d_sk
+    signedCert:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/nttOrg.chainrefund.com/users/Admin@nttOrg.chainrefund.com/signcerts/Admin@nttOrg.chainrefund.com-cert.pem
+
+orderers:
+  orderer.chainrefund.com:
+    url: grpcs://localhost:7050
+    grpcOptions:
+      ssl-target-name-override: orderer.chainrefund.com
+      grpc-max-send-message-length: 15
+    tlsCACerts:
+      path: test/fixtures/channel/crypto-config/ordererOrganizations/chainrefund.com/orderers/orderer.chainrefund.com/tlscacerts/chainrefund.com-cert.pem
+
+peers:
+  peer0.chainrefundOrg.chainrefund.com:
+    url: grpcs://localhost:7051
+    eventUrl: grpcs://localhost:7053
+    grpcOptions:
+      ssl-target-name-override: peer0.chainrefundOrg.chainrefund.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/chainrefundOrg.chainrefund.com/peers/peer0.chainrefundOrg.chainrefund.com/tlscacerts/chainrefundOrg.chainrefund.com-cert.pem
+
+  peer0.customsOrg.chainrefund.com:
+    url: grpcs://localhost:9051
+    eventUrl: grpcs://localhost:9053
+    grpcOptions:
+      ssl-target-name-override: peer0.customsOrg.chainrefund.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/customsOrg.chainrefund.com/peers/peer0.customsOrg.chainrefund.com/tlscacerts/customsOrg.chainrefund.com-cert.pem
+  
+  peer0.merchants.chainrefund.com:
+    url: grpcs://localhost:10051
+    eventUrl: grpcs://localhost:10053
+    grpcOptions:
+      ssl-target-name-override: peer0.merchantsOrg.chainrefund.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/merchantsOrg.chainrefund.com/peers/peer0.merchantsOrg.chainrefund.com/tlscacerts/merchantsOrg.chainrefund.com-cert.pem
+  
+  peer0.nttOrg.chainrefund.com:
+    url: grpcs://localhost:11051
+    eventUrl: grpcs://localhost:11053
+    grpcOptions:
+      ssl-target-name-override: peer0.nttOrg.chainrefund.com
+      grpc.keepalive_time_ms: 600000
+    tlsCACerts:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/nttOrg.chainrefund.com/peers/peer0.nttOrg.chainrefund.com/tlscacerts/nttOrg.chainrefund.com-cert.pem
+
+certificateAuthorities:
+  ca-chainrefundOrg:
+    url: https://localhost:7054
+    httpOptions:
+      verify: false
+    tlsCACerts:
+      path: test/fixtures/channel/crypto-config/peerOrganizations/chainrefundOrg.chainrefund.com/ca/chainrefundOrg.chainrefund.com-cert.pem
+    registrar:
+      - enrollId: chainrefund
+        enrollSecret: chain2018
+    caName: ca.chainrefund.com

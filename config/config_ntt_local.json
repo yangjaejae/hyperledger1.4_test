@@ -1,0 +1,55 @@
+{
+    "name": "ch-taxrefund",
+    "version": "1.0.0",
+    "client": {
+        "organization": "NTTOrg",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "NTTOrg": {
+            "mspid": "NTTOrgMSP",
+            "peers": [
+                "peer0.nttOrg.chainrefund.com"
+            ],
+            "certificateAuthorities": [
+                "ca"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer.chainrefund.com": {
+            "url": "grpc://localhost:7050"
+        }
+    },
+    "peers": {
+        "peer0.nttOrg.chainrefund.com": {
+            "url": "grpcs://127.0.0.1:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICcDCCAhegAwIBAgIQIvS1CrUvvMu1UkeG2lr3bzAKBggqhkjOPQQDAjCBgjEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xHzAdBgNVBAoTFm50dE9yZy5jaGFpbnJlZnVuZC5jb20xJTAjBgNV\nBAMTHHRsc2NhLm50dE9yZy5jaGFpbnJlZnVuZC5jb20wHhcNMTkxMTI2MDcwODAw\nWhcNMjkxMTIzMDcwODAwWjCBgjELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlm\nb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xHzAdBgNVBAoTFm50dE9yZy5j\naGFpbnJlZnVuZC5jb20xJTAjBgNVBAMTHHRsc2NhLm50dE9yZy5jaGFpbnJlZnVu\nZC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQ12cajTV+EQaCHBfL7y+Ze\ni0VpU16eeu77qvcdsZJ0xYEoW393L0uAPI8F2uSq498W/fxXI+JnOB8ZXlb4Z+xD\no20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUF\nBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEIKsfMixTnrJ9j68nQNPGFZAu\nJcaqPgUOjp5wUlhT3nMXMAoGCCqGSM49BAMCA0cAMEQCIB5UoT9fJAa+vXaRkkIk\nHF2M5rHsLdH6qGCW1IScGDWUAiACDs1NaggIvjUjdVax4aFlxMW0TsqFia4mGL5V\n0sWCQw==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.nttOrg.chainrefund.com",
+                "hostnameOverride": "peer0.nttOrg.chainrefund.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca": {
+            "url": "https://127.0.0.1:7054",
+            "caName": "ca",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICjDCCAjKgAwIBAgIRAKcl8JKyBqJTQEVEg8D/fcUwCgYIKoZIzj0EAwIwgY8x\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMScwJQYDVQQKEx5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5j\nb20xKjAoBgNVBAMTIWNhLmNoYWlucmVmdW5kT3JnLmNoYWlucmVmdW5kLmNvbTAe\nFw0xOTExMjYwNzA4MDBaFw0yOTExMjMwNzA4MDBaMIGPMQswCQYDVQQGEwJVUzET\nMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEnMCUG\nA1UEChMeY2hhaW5yZWZ1bmRPcmcuY2hhaW5yZWZ1bmQuY29tMSowKAYDVQQDEyFj\nYS5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5jb20wWTATBgcqhkjOPQIBBggq\nhkjOPQMBBwNCAASSIpAlaxJuG3NKsb8yQ0k7b0ZhFViWvXfRKdmekwwVgDtIvUgp\n5ve/Xn4X3i3kkpWp1Du5y62AB2EA3dwG61aHo20wazAOBgNVHQ8BAf8EBAMCAaYw\nHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8w\nKQYDVR0OBCIEIASgNRvhuTQUUzG6cMF8HIr3X2Xhl8VDhCcOkKYXMmLYMAoGCCqG\nSM49BAMCA0gAMEUCIQD8YiHLKe6BJTj5nWRmWaOpXIid1enC0/eLitMHnzPJ3gIg\ncKcHAJ/AFlG2BQl88eVTkdxk4FCo1ssbHRD4rrGB+Vg=\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+    
+}

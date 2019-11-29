@@ -1,0 +1,55 @@
+{
+    "name": "ch-taxrefund",
+    "version": "1.0.0",
+    "client": {
+        "organization": "ChainrefundOrg",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "ChainrefundOrg": {
+            "mspid": "ChainrefundOrgMSP",
+            "peers": [
+                "peer0.chainrefundOrg.chainrefund.com"
+            ],
+            "certificateAuthorities": [
+                "ca"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer.chainrefund.com": {
+            "url": "grpc://localhost:7050"
+        }
+    },
+    "peers": {
+        "peer0.chainrefundOrg.chainrefund.com": {
+            "url": "grpcs://127.0.0.1:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICkDCCAjegAwIBAgIQDHdKJo+EoysOMPmwFKlaeDAKBggqhkjOPQQDAjCBkjEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xJzAlBgNVBAoTHmNoYWlucmVmdW5kT3JnLmNoYWlucmVmdW5kLmNv\nbTEtMCsGA1UEAxMkdGxzY2EuY2hhaW5yZWZ1bmRPcmcuY2hhaW5yZWZ1bmQuY29t\nMB4XDTE5MTEyNjA3MDgwMFoXDTI5MTEyMzA3MDgwMFowgZIxCzAJBgNVBAYTAlVT\nMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMScw\nJQYDVQQKEx5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5jb20xLTArBgNVBAMT\nJHRsc2NhLmNoYWlucmVmdW5kT3JnLmNoYWlucmVmdW5kLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABOgFpdGl5XBsvJT7WUXuX4Eit5BJ7PghbPJsFujGSrJM\ngIP8xmMjoAJ9T4XYsFj3pF0PbfEkAyIlX6KbsTdAUCmjbTBrMA4GA1UdDwEB/wQE\nAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUw\nAwEB/zApBgNVHQ4EIgQgiHcQr1gtQp5ThH3BiEHAJiL+cZyxaHOXQM7uNSf7xLow\nCgYIKoZIzj0EAwIDRwAwRAIgY6RXUb+lETi+Emos8PDcKP/gWvyV6GlH6e2hIRPv\nyeECIG28cietIvdcFXds1Jr6RbccLSnwbomSdng4oh4wG85M\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.chainrefundOrg.chainrefund.com",
+                "hostnameOverride": "peer0.chainrefundOrg.chainrefund.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca": {
+            "url": "https://127.0.0.1:7054",
+            "caName": "ca",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICjDCCAjKgAwIBAgIRAKcl8JKyBqJTQEVEg8D/fcUwCgYIKoZIzj0EAwIwgY8x\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMScwJQYDVQQKEx5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5j\nb20xKjAoBgNVBAMTIWNhLmNoYWlucmVmdW5kT3JnLmNoYWlucmVmdW5kLmNvbTAe\nFw0xOTExMjYwNzA4MDBaFw0yOTExMjMwNzA4MDBaMIGPMQswCQYDVQQGEwJVUzET\nMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEnMCUG\nA1UEChMeY2hhaW5yZWZ1bmRPcmcuY2hhaW5yZWZ1bmQuY29tMSowKAYDVQQDEyFj\nYS5jaGFpbnJlZnVuZE9yZy5jaGFpbnJlZnVuZC5jb20wWTATBgcqhkjOPQIBBggq\nhkjOPQMBBwNCAASSIpAlaxJuG3NKsb8yQ0k7b0ZhFViWvXfRKdmekwwVgDtIvUgp\n5ve/Xn4X3i3kkpWp1Du5y62AB2EA3dwG61aHo20wazAOBgNVHQ8BAf8EBAMCAaYw\nHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8w\nKQYDVR0OBCIEIASgNRvhuTQUUzG6cMF8HIr3X2Xhl8VDhCcOkKYXMmLYMAoGCCqG\nSM49BAMCA0gAMEUCIQD8YiHLKe6BJTj5nWRmWaOpXIid1enC0/eLitMHnzPJ3gIg\ncKcHAJ/AFlG2BQl88eVTkdxk4FCo1ssbHRD4rrGB+Vg=\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+    
+}

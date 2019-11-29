@@ -31,8 +31,26 @@ router.post('/transaction_add', (req, res) => {
     });
 });
 
+router.post('/transaction_taxreceipt', (req, res) => {
+    transaction.transaction_taxreceipt(req).then((result) => {
+        res.send(result);
+    })
+    .catch( error => {
+        res.send(error);
+    });
+});
+
 router.post('/query_result', (req, res) => {
     transaction.query_result(req).then((result) => {
+        res.send(result);
+    })
+    .catch( error => {
+        res.send(error);
+    });
+});
+
+router.post('/query_block', (req, res) => {
+    transaction.query_block(req).then((result) => {
         res.send(result);
     })
     .catch( error => {
